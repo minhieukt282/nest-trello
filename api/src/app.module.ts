@@ -6,6 +6,8 @@ import { TableModule } from './table/table.module';
 import { RowEntity } from "./table/row.entity";
 import { ColumnEntity } from "./table/column.entity";
 import { AuthModule } from './auth/auth.module';
+import { APP_GUARD } from "@nestjs/core";
+import { AuthGuard } from "./auth/decorate/auth.guard";
 
 
 @Module({
@@ -22,6 +24,12 @@ import { AuthModule } from './auth/auth.module';
     UsersModule,
     TableModule,
     AuthModule],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: AuthGuard,
+    },
+  ]
 })
 export class AppModule {
 }

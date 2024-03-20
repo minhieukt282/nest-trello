@@ -47,4 +47,10 @@ export class TableService {
     return await this.rowRepository.save(newRow);
   }
 
+  async getOneRow() : Promise<RowEntity> {
+    return await this.rowRepository.findOneBy({
+      rowId: 1
+    })
+  }
+
 }
