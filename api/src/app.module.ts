@@ -5,6 +5,7 @@ import { User } from "./users/users.entity";
 import { TableModule } from './table/table.module';
 import { RowEntity } from "./table/row.entity";
 import { ColumnEntity } from "./table/column.entity";
+import { AuthModule } from './auth/auth.module';
 
 
 @Module({
@@ -19,7 +20,8 @@ import { ColumnEntity } from "./table/column.entity";
     synchronize: true,
   }),
     UsersModule,
-    TableModule],
+    TableModule,
+    AuthModule],
 })
 export class AppModule {
 }

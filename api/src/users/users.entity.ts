@@ -15,6 +15,9 @@ export class User {
   @Column()
   display_name: string;
 
+  @Column()
+  role: string;
+
   @OneToMany(() => ColumnEntity, (col) => col.user)
   cols: ColumnEntity[];
 }

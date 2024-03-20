@@ -32,4 +32,10 @@ export class UsersService {
     });
   }
 
+  async findUserByUsername(username: string): Promise<User> {
+    return await this.usersRepository.findOneBy({
+      username: username
+    });
+  }
+
 }
